@@ -1,4 +1,4 @@
-# Molecular networks: Uniques generated patterns
+# Periodic table data visualization
 
 A visual representation (data visualization) of the chimical elements periodic table.
 
