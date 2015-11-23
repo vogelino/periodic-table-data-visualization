@@ -11,6 +11,12 @@
       }
     },
 
+    "data": {
+      "src": "data",
+      "dest": "data",
+      "extensions": ["json"]
+    },
+
     "js": {
       "src": "javascripts",
       "dest": "javascripts",
