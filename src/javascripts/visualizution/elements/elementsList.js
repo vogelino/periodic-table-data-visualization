@@ -43,7 +43,6 @@ const ElementsList = () => {
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 		my.displayList();
-		my.displayLegend();
 	};
 
 	my.displayList = () => {
