@@ -2,7 +2,7 @@
 
 A visual representation (data visualization) of the chimical elements periodic table.
 
-#### [Demo](vogelino.github.io/periodic-table-data-visualization/)
+#### [Demo](http://vogelino.github.io/periodic-table-data-visualization/)
 #### Installation
 ```
 git clone https://github.com/vogelino/periodic-table-data-visualization.git
