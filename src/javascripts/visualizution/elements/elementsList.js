@@ -14,18 +14,7 @@ const ElementsList = () => {
 		dotTextSize: 12,
 		strokeWidth: 2,
 		legendsHeight: 100,
-		colors: {
-			'nonmetal': 			'#DA56D6',
-			'noble gas': 			'#6ED549',
-			'alkali metal': 		'#E25E48',
-			'alkaline earth metal': '#52C3C3',
-			'metalloid': 			'#8B98CD',
-			'halogen': 				'#D8699A',
-			'metal': 				'#C78F37',
-			'transition metal': 	'#C4CC43',
-			'lanthanoid': 			'#69B971',
-			'actinoid': 			'#967BE2'
-		}
+		colors: {}
 	};
 
 	that.setElement = (id) => {
@@ -34,7 +23,7 @@ const ElementsList = () => {
 
 	that.render = () => {
 		document.getElementById(my.id).innerHTML = "";
-		const margin = {top: 40, right: 40, bottom: 30, left: 40};
+		const margin = {top: 55, right: 40, bottom: 30, left: 40};
 		my.width = window.innerWidth - margin.left - margin.right;
 		my.height = my.model.get().size * my.defaults.verticalSpace;
 		my.svg = d3.select(`#${my.id}`).append("svg")
@@ -52,6 +41,10 @@ const ElementsList = () => {
 
 	that.setSizeKey = (sizeParameter) => {
 		my.defaults.sizeParameter = sizeParameter;
+	};
+
+	that.setColors = (colors) => {
+		my.defaults.colors = colors;
 	};
 
 	my.displayList = () => {

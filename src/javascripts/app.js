@@ -21,6 +21,18 @@ const initApp = () => {
 };
 
 const initElements = () => {
+	const colors = {
+		'nonmetal': 			'#CD51CB',
+		'noble gas': 			'#73D74D',
+		'alkali metal': 		'#D55438',
+		'alkaline earth metal': '#559BBA',
+		'metalloid': 			'#57D29E',
+		'halogen': 				'#CC567E',
+		'metal': 				'#5D8A3A',
+		'transition metal': 	'#917ACA',
+		'lanthanoid': 			'#BE8630',
+		'actinoid': 			'#CDD143'
+	};
 	setState({
 		parameters: [
 			'atomicNumber',
@@ -28,8 +40,10 @@ const initElements = () => {
 			'name',
 			'symbol'
 		],
-		selectedSortingKey: 'groupBlock'
+		selectedSortingKey: 'groupBlock',
+		colors
 	});
+	elementsList.setColors(colors);
 };
 
 // Actions

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 const Select = require('react-select');
+import Legend from '../legend/legend';
 
 export default class ContorlsView extends Component {
 	static propTypes = {
@@ -15,7 +16,11 @@ export default class ContorlsView extends Component {
 			};
 		});
 		return (
-			<div className="controls">
+			<div className="header">
+				<div className="title">
+					Chemical elements | Data visualization
+					<a href="https://github.com/vogelino/periodic-table-data-visualization" target="_blank">See on github</a>
+				</div>
 				<div className="control-group">
 					<label>
 						<span className="label-text">Sort by:</span>
@@ -31,6 +36,7 @@ export default class ContorlsView extends Component {
 							searchable={false} />
 					</label>
 				</div>
+				<Legend {...this.props} />
 			</div>
 		);
 	}
