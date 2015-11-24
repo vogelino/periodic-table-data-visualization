@@ -14,6 +14,8 @@ const ElementsList = () => {
 		dotTextSize: 12,
 		strokeWidth: 2,
 		legendsHeight: 100,
+		marginTop: 20,
+		marginLeft: 20,
 		colors: {}
 	};
 
@@ -51,7 +53,7 @@ const ElementsList = () => {
 		const scale = d3.scale.linear();
 		let elements = my.model.get();
 		scale.domain(my.getScaleDomain(elements));
-		scale.range([0, (my.width - my.defaults.dotRadius - 200)]);
+		scale.range([my.defaults.marginLeft, (my.width - my.defaults.dotRadius - 200)]);
 		elements = elements.sort((a, b) => my.sortElementsBy(my.defaults.sortingKey, a, b));
 		elements = elements.toJSON();
 
@@ -60,9 +62,9 @@ const ElementsList = () => {
 			.enter().append('line')
 			.attr('stroke', (d, i) => i % 10 === 0 ? 'lightgrey' : 'whitesmoke')
 			.attr('stroke-width', 1)
-			.attr('x1', (d, i) => scale(i))
-			.attr('y1', 0)
-			.attr('x2', (d, i) => scale(i))
+			.attr('x1', (d, i) => scale(i + 1))
+			.attr('y1', my.defaults.marginTop)
+			.attr('x2', (d, i) => scale(i + 1))
 			.attr('y2', my.height);
 
 		my.svg.selectAll('.name')
@@ -70,7 +72,7 @@ const ElementsList = () => {
 			.enter().append('text')
 			.attr('fill', my.mapGroupBlockToColor)
 			.attr('x', (d) => scale(d[my.defaults.sizeParameter]) + my.defaults.dotToLabelDistance)
-			.attr('y', (d, i) => (i * my.defaults.verticalSpace) + 7)
+			.attr('y', (d, i) => (i * my.defaults.verticalSpace) + 7 + my.defaults.marginTop)
 			.text((d) => `${d.name}`);
 
 		my.svg.selectAll('.line')
@@ -78,10 +80,10 @@ const ElementsList = () => {
 			.enter().append('line')
 			.attr('stroke', my.mapGroupBlockToColor)
 			.attr('stroke-width', my.defaults.strokeWidth)
-			.attr('x1', scale(0))
-			.attr('y1', (d, i) => (i * my.defaults.verticalSpace))
+			.attr('x1', scale(1))
+			.attr('y1', (d, i) => (i * my.defaults.verticalSpace) + my.defaults.marginTop)
 			.attr('x2', (d) => scale(d[my.defaults.sizeParameter]))
-			.attr('y2', (d, i) => (i * my.defaults.verticalSpace));
+			.attr('y2', (d, i) => (i * my.defaults.verticalSpace) + my.defaults.marginTop);
 
 		my.svg.selectAll('.symbol-dot')
 			.data(elements)
@@ -91,7 +93,7 @@ const ElementsList = () => {
 			.attr('stroke-width', my.defaults.strokeWidth)
 			.attr('r', my.defaults.dotRadius)
 			.attr('cx', (d) => scale(d[my.defaults.sizeParameter]) + (my.defaults.dotRadius * 2))
-			.attr('cy', (d, i) => (i * my.defaults.verticalSpace));
+			.attr('cy', (d, i) => (i * my.defaults.verticalSpace) + my.defaults.marginTop);
 
 		const rectSize = (my.defaults.dotRadius * 2);
 		my.svg.selectAll('.symbol-rect')
@@ -103,7 +105,8 @@ const ElementsList = () => {
 			.attr('width', rectSize)
 			.attr('height', rectSize)
 			.attr('x', (d) => scale(d[my.defaults.sizeParameter]) - (rectSize / 10))
-			.attr('y', (d, i) => (i * my.defaults.verticalSpace) - my.defaults.dotRadius);
+			.attr('y', (d, i) => (i * my.defaults.verticalSpace) -
+				my.defaults.dotRadius + my.defaults.marginTop);
 
 		my.svg.selectAll('.value-dot')
 			.data(elements)
@@ -113,14 +116,14 @@ const ElementsList = () => {
 			.attr('fill', '#fff')
 			.attr('r', my.defaults.dotRadius)
 			.attr('cx', (d) => scale(d[my.defaults.sizeParameter]))
-			.attr('cy', (d, i) => (i * my.defaults.verticalSpace));
+			.attr('cy', (d, i) => (i * my.defaults.verticalSpace) + my.defaults.marginTop);
 
 		my.svg.selectAll('.value-text')
 			.data(elements)
 			.enter().append('text')
 			.attr('fill', my.mapGroupBlockToColor)
 			.attr('x', (d) => scale(d[my.defaults.sizeParameter]))
-			.attr('y', (d, i) => (i * my.defaults.verticalSpace) + 5)
+			.attr('y', (d, i) => (i * my.defaults.verticalSpace) + 5 + my.defaults.marginTop)
 			.attr('font-size', my.defaults.dotTextSize)
 			.attr('font-weight', 'bold')
 			.attr('text-anchor', 'middle')
@@ -135,11 +138,25 @@ const ElementsList = () => {
 			.attr('fill', '#fff')
 			.attr('x', (d) => scale(d[my.defaults.sizeParameter]) +
 				rectSize - (my.defaults.strokeWidth))
-			.attr('y', (d, i) => (i * my.defaults.verticalSpace) + 5)
+			.attr('y', (d, i) => (i * my.defaults.verticalSpace) + 5 + my.defaults.marginTop)
 			.attr('font-size', my.defaults.dotTextSize)
 			.attr('font-weight', 'bold')
 			.attr('text-anchor', 'middle')
 			.text((d) => `${d.symbol}`);
+
+		my.svg.append('text')
+			.attr('x', my.defaults.marginLeft)
+			.attr('y', 0)
+			.attr('font-size', my.defaults.dotTextSize)
+			.text('Atomic number >');
+
+		my.svg.append('text')
+			.attr('class', 'y-axis-label')
+			.attr('x', -70)
+			.attr('y', 0)
+			.text('< Sorting')
+			.attr('font-size', my.defaults.dotTextSize)
+			.attr('transform', 'rotate(-90)');
 	};
 
 	my.mapGroupBlockToColor = (d) => {
