@@ -14,7 +14,7 @@ const ElementsModel = () => {
 
 	that.fetch = () => {
 		const dfd = new Deferred();
-		d3.json('../../../data/elements.json', (data) => {
+		d3.json('data/elements.json', (data) => {
 			const elements = Immutable.List(data[0].elements);
 			that.set('elements', elements);
 			dfd.resolve(that.get());

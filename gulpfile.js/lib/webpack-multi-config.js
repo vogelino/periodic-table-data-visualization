@@ -27,6 +27,11 @@ module.exports = function(env) {
           test: /\.js$/,
           loader: 'babel-loader?stage=1',
           exclude: /node_modules/
+        },
+        {
+          test: /\.jsx$/,
+          loader: 'jsx-loader?insertPragma=React.DOM&harmony',
+          exclude: /node_modules/
         }
       ]
     }

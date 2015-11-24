@@ -25,7 +25,7 @@
         "app": ["./app.js"],
         "page": ["./page.js"]
       },
-      "extensions": ["js"]
+      "extensions": ["js", "jsx"]
     },
 
     "css": {
