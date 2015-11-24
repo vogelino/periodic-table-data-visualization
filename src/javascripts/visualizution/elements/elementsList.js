@@ -33,6 +33,7 @@ const ElementsList = () => {
 	};
 
 	that.render = () => {
+		document.getElementById(my.id).innerHTML = "";
 		const margin = {top: 40, right: 40, bottom: 30, left: 40};
 		my.width = window.innerWidth - margin.left - margin.right;
 		my.height = my.model.get().size * my.defaults.verticalSpace;
@@ -43,6 +44,14 @@ const ElementsList = () => {
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 		my.displayList();
+	};
+
+	that.setSortingKey = (sortingKey) => {
+		my.defaults.sortingKey = sortingKey;
+	};
+
+	that.setSizeKey = (sizeParameter) => {
+		my.defaults.sizeParameter = sizeParameter;
 	};
 
 	my.displayList = () => {

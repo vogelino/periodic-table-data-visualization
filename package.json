@@ -24,7 +24,8 @@
     "deferred-js": "^1.0.2",
     "immutable": "^3.7.5",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react-dom": "^0.14.3",
+    "react-select": "^0.9.1"
   },
   "devDependencies": {
     "babel-core": "^5.8.3",
