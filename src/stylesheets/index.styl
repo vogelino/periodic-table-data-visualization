@@ -1,0 +1,172 @@
+@import 'lib/reactSelect'
+@import 'nib'
+
+body
+	font-family 'Open Sans', Arial, sans-serif
+	margin 0
+	padding 120px 0 0
+	position relative
+
+a
+	text-decoration none
+	transition color 100ms ease-in-out, background 100ms ease-in-out
+
+ul,
+ul li
+	margin 0
+	padding 0
+	list-style none
+
+.y-axis-label
+	transform-origin center center
+
+.header,
+.header .title,
+.header .control-group,
+.header .label-text,
+.header .Select,
+.legend,
+.legend .color-legend-wrapper,
+.legend .color-legend,
+.legend .bar-legend
+	width 100%
+	float left
+	box-sizing border-box
+
+.header,
+.header .title
+	position fixed
+	top 0
+	left 0
+
+.header
+	padding 50px 30px 30px
+	background #fff
+	box-shadow 0 1px 1px rgba(0,0,0,.1)
+
+	.title
+		font-size 12px
+		font-weight bold
+		padding 3px 30px 5px
+		background grey
+		color white
+
+		a
+			float right
+			color white
+			text-decoration underline
+
+			&:hover
+				color whitesmoke
+
+	.control-group
+		width 25%
+		padding-right 50px
+
+		.label-text
+			margin 0 0 7px 0
+
+$barLegendWidth = 215px
+.legend
+	width 75%
+	position relative
+	padding-right $barLegendWidth
+
+	.color-legend
+		width 100%
+
+		.color-legend-wrapper
+			width 25%
+			box-sizing border-box
+			padding-left 20px
+			position relative
+
+			.color-badge
+				float left
+				width 10px
+				height 10px
+				border-radius 50%
+				margin-right 10px
+				position absolute
+				top 7px
+				left 0
+
+	.bar-legend
+		width $barLegendWidth
+		position absolute
+		height 66px
+		top 0
+		right 0
+
+		.bar-legend-wrapper
+			width $barLegendWidth
+			height 55px
+			position relative
+
+		.atomic-number,
+		.element-symbol
+			height 28px
+			border-radius 28px
+			border 2px solid grey
+			bottom 0
+			left 0
+
+		.atomic-number,
+		.element-symbol,
+		.element-symbol-label,
+		.element-symbol-line,
+		.atomic-number-label,
+		.atomic-number-line,
+		.atomic-number-number,
+		.element-symbol-symbol
+			position absolute
+
+		.atomic-number-number,
+		.element-symbol-symbol
+			font-size 12px
+			font-weight bold
+			z-index 3
+
+		.atomic-number
+			width 28px
+			background #fff
+			z-index 2
+
+		.atomic-number-number
+			bottom 7px
+			left 5px
+			color grey
+
+		.atomic-number-line
+			width 70px
+			height 5px
+			border-left 1px solid
+			border-top 1px solid
+			border-color grey
+			bottom 35px
+			left 14px
+
+		.atomic-number-label
+			bottom 30px
+			left 95px
+
+		.element-symbol
+			width 60px
+			background grey
+			z-index 1
+
+		.element-symbol-symbol
+			bottom 7px
+			left 34px
+			color white
+
+		.element-symbol-line
+			width 26px
+			border-top 1px solid grey
+			height 1px
+			bottom 14px
+			left 60px
+
+		.element-symbol-label
+			bottom 5px
+			left 95px
