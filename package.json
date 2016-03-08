@@ -14,6 +14,7 @@
   "author": "vogelino",
   "main": "./src/js/index.js",
   "scripts": {
+    "deploy": "npm run build && node ./scripts/deploy-to-gh-pages.js",
     "clean": "rm -rf ./public",
     "build": "npm run clean && webpack -p",
     "watch": "webpack-dev-server -d",
@@ -37,6 +38,7 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.9.0",
     "json-loader": "^0.5.4",
     "nib": "^1.1.0",
