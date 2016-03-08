@@ -2,6 +2,8 @@
 
 A visual representation (data visualization) of the chimical elements periodic table.
 
+![Periodic table data visualization beauty shot](https://raw.githubusercontent.com/vogelino/periodic-table-data-visualization/master/documentation/images/beautyShot.png)
+
 #### [Demo](http://vogelino.github.io/periodic-table-data-visualization/)
 #### Installation
 ```
@@ -11,7 +13,7 @@ npm install
 ```
 
 #### Use
-Run `gulp` and open `http://localhost:3000`
+Run `npm start` and open `http://localhost:8080`
 
 ---
 
