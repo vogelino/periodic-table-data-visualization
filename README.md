@@ -4,6 +4,8 @@ A different visual representation of the chemical elements of the periodic table
 
 ![Periodic table data visualization beauty shot](https://raw.githubusercontent.com/vogelino/periodic-table-data-visualization/master/documentation/images/beautyShot.png)
 
+![Periodic table data visualization beauty shot](https://raw.githubusercontent.com/vogelino/periodic-table-data-visualization/master/documentation/images/beautyShot.png)
+
 #### [Demo](http://vogelino.github.io/periodic-table-data-visualization/)
 #### Installation
 ```
