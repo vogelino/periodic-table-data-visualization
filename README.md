@@ -1,5 +1,5 @@
-# [Periodic table data visualization](http://vogelino.github.io/periodic-table-data-visualization/)
 
+# [Another periodic table](http://vogelino.github.io/periodic-table-data-visualization/) :microscope:
 A different visual representation of the chemical elements of the periodic table.
 
 [**Demo**](http://vogelino.github.io/periodic-table-data-visualization/)
