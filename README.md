@@ -1,6 +1,6 @@
 # Periodic table data visualization
 
-A visual representation (data visualization) of the chimical elements periodic table.
+A different visual representation of the chemical elements of the periodic table.
 
 ![Periodic table data visualization beauty shot](https://raw.githubusercontent.com/vogelino/periodic-table-data-visualization/master/documentation/images/beautyShot.png)
 
