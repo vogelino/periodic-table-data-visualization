@@ -1,12 +1,13 @@
-# Periodic table data visualization
+# [Periodic table data visualization](http://vogelino.github.io/periodic-table-data-visualization/)
 
 A different visual representation of the chemical elements of the periodic table.
 
-![Periodic table data visualization beauty shot](https://raw.githubusercontent.com/vogelino/periodic-table-data-visualization/master/documentation/images/beautyShot.png)
+[**Demo**](http://vogelino.github.io/periodic-table-data-visualization/)
 
 ![Periodic table data visualization beauty shot](https://raw.githubusercontent.com/vogelino/periodic-table-data-visualization/master/documentation/images/beautyShot.png)
 
-#### [Demo](http://vogelino.github.io/periodic-table-data-visualization/)
+![Periodic table data visualization beauty shot](https://raw.githubusercontent.com/vogelino/periodic-table-data-visualization/master/documentation/images/beautyShot.png)
+
 #### Installation
 ```
 git clone https://github.com/vogelino/periodic-table-data-visualization.git
